@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 10px;
+      background-color: darkgrey;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    header {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    h1 {
+      font-weight: bold;
+      margin: 0;
+      color: white;
+    }
+
+    h1 span {
+      font-weight: normal;
+      font-size: 16px;
+      display: block;
+      color: white;
+    }
+
+    input[type="text"] {
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 6px 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .game-block {
+      border: 1.5px solid black;
+      padding: 50px;
+      margin: 20px;
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+      width: 180px;
+      min-height: 200px;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .scrollbar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 10px;
+      background-color: #ddd;
+      cursor: pointer;
+      border-radius: 100px;
+      opacity: 0.7;
+    }
+
+    .scroll-thumb {
+      width: 100%;
+      background-color: #888;
+      border-radius: 100px;
+    }
+
+    .gamesList {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      gap: 20px;
+    }
+  </style>
+  <title>Gaming Hub</title>
+</head>
+
+<body>
+
+  <header>
+    <img src="img 2.png" alt="Gaming Logo">
+    <h1>Gaming Website <span>By Azmat Afzal</span></h1>
+    <div>
+      <input type="text" id="searchInput" placeholder="Search...">
+      <button onclick="search()">Search</button>
+    </div>
+  </header>
+  <div class="gamesList">
+    <div class="game-block">
+      <img src="img 3.png" alt="Game 2">
+      <h2>Hill Climb Racing</h2>
+      <p>A car game start from hill</p>
+    </div>
+
+    <div class="game-block">
+      <img src="images.jpg" alt="Game 3">
+      <h2>Free Fire</h2>
+      <p>A battle ground game</p>
+    </div>
+    <div class="game-block">
+      <img src="download.jpeg" alt="Game 3">
+      <h2>PUBG</h2>
+      <p>A battle ground game name PubG</p>
+    </div>
+    <div class="game-block">
+      <img src="png-transparent-need-for-speed-rivals-need-for-speed-underground-2-need-for-speed-most-wanted-need-for-speed-game-car-performance-car-thumbnail-removebg-preview.png" alt="Game 3">
+      <h2>Need For Speed</h2>
+      <p>Realistic car driving and Racing application made for enjoying</p>
+    </div>
+    <div class="game-block">
+      <img src="download 1.jpeg" alt="Game 3">
+      <h2>Mini Militia</h2>
+      <p>Mini Militia is an action-packed game that thrusts players into the heart of intense.</p>
+    </div>
+    <div class="game-block">
+      <img src="azmat.jpeg" alt="Game 3">
+      <h2>Candy Crush</h2>
+      <p>Candy Crush is a wildly popular and addictive mobile puzzle game that indulges players in a delicious world of sweet.</p>
+    </div>
+    <div class="game-block">
+      <img src="azmat 1.jpeg" alt="Game 3">
+      <h2>GTA V</h2>
+      <p>GTA 5 is an adventurous game that takes players on a journey through the fictional state of San Andreas.</p>
+    </div>
+    <div class="game-block">
+      <img src="call of duty.jpeg" alt="Game 3">
+      <h2>Call Of Duty</h2>
+      <p>It is a highly successful and influential video game franchise known for its immersive and intense first-person shooter (FPS) experiences.</p>
+    </div>
+    <div class="game-block">
+      <img src="Fortnite.jpg" alt="Game 3">
+      <h2>Fortnite</h2>
+      <p>A  is a wildly popular and groundbreaking online multiplayer battle royale game developed and published by Epic Games Launched in 2017..</p>
+      </div>
+      <!-- <div class="footer">The END</div> -->
+  </div>
+  </div>
+  <div class="scrollbar">
+    <div class="scroll-thumb" id="scrollThumb"></div>
+  </div>
+
+  <script>
+    const gameBlock = document.querySelector('.game-block');
+    const scrollThumb = document.getElementById('scrollThumb');
+
+    window.addEventListener('scroll', updateScrollbar);
+
+    function updateScrollbar() {
+      const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      scrollThumb.style.height = scrollPercentage + '%';
+    }
+
+    function search() {
+      const searchInput = document.getElementById('searchInput').value;
+      alert(`Searching for: ${searchInput}`);
+    }
+  </script>
+
+</body>
+
+</html>
